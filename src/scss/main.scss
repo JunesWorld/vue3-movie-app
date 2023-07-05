@@ -1,11 +1,16 @@
-$color--black: #000;
-$color--white: #fff;
+// Default variable overrides
+// 재정의 색상은 variables 코드 실행되기 전에 넣어줘야한다.
+$primary: #FDC000;
 
-body {
-  background-color: $color--black;
-  h1 {
-    color: $color--white;
-    font-size: 40px;
-    display: flex;
-  }
-}
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+// $theme-colors에서 재정의 하지 않는다면 이곳에 삽입
+// |- 만약, 모두 재정의 할 경우는 맨 위
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
