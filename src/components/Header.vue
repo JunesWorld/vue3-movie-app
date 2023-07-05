@@ -1,5 +1,7 @@
 <template>
   <header>
+    <!-- Logo 출력 -->
+    <Logo />
     <!-- 
         [Header] search, movie, about
         반복몬 [v-for]
@@ -27,7 +29,12 @@
 </template>
 
 <script>
+import Logo from '~/components/Logo'
+
 export default {
+  components: {
+    Logo
+  },
   data() {
     return {
       navigations: [
@@ -48,3 +55,16 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+// Header 수평정렬
+header {
+  height: 70px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  .logo {
+    margin-right: 40px;
+  }
+}
+</style>
