@@ -21,6 +21,7 @@ Install 후 main.js에 연결 및 routes폴더 / index.js & Home.vue & About.vue
 npm i bootstrap
 ```
 
+## Header(Nav)
 - main.scss에 연결
 - Bootstrap Homepage/Customize/Sass
   - !default
@@ -47,3 +48,25 @@ npm i bootstrap
 
 - Header(Nav)
   - Bootstrap Homepage/Components/Navs & Tabs/Pills
+  - 경로
+    - components/Header.vue
+   
+## Header(Logo&Google Fonts)
+
+- Header.vue / Logo.vue / index.html
+
+Google Fonts (index.html)
+- Roboto(Regular400, Bold700) -> Project 전체
+- oswald(500) -> Logo에서만 사용
+  ```html
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      line-height: 1.4;
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+  ```
