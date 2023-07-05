@@ -13,7 +13,9 @@ vue3 Router = Vue-router next
 
 Install 후 main.js에 연결 및 routes폴더 / index.js & Home.vue & About.vue 파일 생성
 
-## Bootstrap Install
+## Bootstrap 
+
+- Install
 
 ```bash
 npm i bootstrap
@@ -42,3 +44,6 @@ npm i bootstrap
     
     @import "../../node_modules/bootstrap/scss/bootstrap";
     ```
+
+- Header(Nav)
+  - Bootstrap Homepage/Components/Navs & Tabs/Pills
