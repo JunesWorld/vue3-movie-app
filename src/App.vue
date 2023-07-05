@@ -1,6 +1,18 @@
+<!-- PageView가 바뀔때마다 RouterView만 바뀌고 Header는 고정 -->
 <template>
+  <Header />
   <RouterView />
 </template>
+
+<script>
+import Header from '~/components/Header'
+export default {
+  components: {
+    // eslint-disable-next-line vue/no-reserved-component-names
+    Header
+  }
+}
+</script>
 
 <!-- 
   [scoped] 

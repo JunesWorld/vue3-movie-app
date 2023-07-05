@@ -37,7 +37,7 @@ module.exports = {
     }],
     // multi-words Error
     "vue/multi-word-component-names": ["error", {
-      "ignores": ["default", "Fruits", "Parent", "Child", "Hello", "About", "Home"]
+      "ignores": ["default", "Header", "About", "Home", "Movie"]
     }]
   }
 }
