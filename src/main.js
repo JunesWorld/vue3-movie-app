@@ -6,13 +6,18 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 // Router
-import router from './routes/index.js'
+// 특정 폴더에 있는 index 파일은 생략 가능
+import router from './routes'
+
+import store from './store/index.js'
 
 // HTML에서 app이라는 값을 가지고 있는 해당 요소에 vue 프로젝트 연결
 // 1. CDN
 //Vue.createApp(App).mount('#app')
 
 // 2. CLI
+// plugin으로 연결 & Library 지정
 createApp(App)
-  .use(router) // plugin으로 연결
+  .use(router) 
+  .use(store)
   .mount('#app')
