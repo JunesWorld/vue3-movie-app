@@ -84,3 +84,9 @@ npm i axios
     - API key등 정보 확인 가능
   - Previe & Response
     - 응답 결과
+
+## Vuex Install
+
+```bash
+npm i vuex@next
+```
