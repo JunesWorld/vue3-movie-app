@@ -3,7 +3,8 @@
     <div class="inner">
       <MovieItem
         v-for="movie in movies"
-        :key="movie.imdbID" />
+        :key="movie.imdbID" 
+        :movie="movie" />
     </div>
   </div>
 </template>
@@ -12,9 +13,12 @@
 import MovieItem from '~/components/MovieItem' // eslint-disable-line no-unused-vars
 
 export default {
-  data() {
-    return {
-      movies: []
+  components: {
+    MovieItem
+  },
+  computed: {
+    movies() {
+      return this.$store.state.movie.movies
     }
   }
 }
