@@ -70,3 +70,17 @@ Google Fonts (index.html)
     }
   </style>
   ```
+
+## Axios Install
+
+HTTP 연결 요청
+```bash
+npm i axios
+```
+통신기록
+- 개발자도구/Network/XHR
+  - XHR은 XMLHttpRequest의 약어로 웹 브라우저와 웹 서버 간에 데이터 전송 API를 의미합니다.</br> 그래서 개발자 도구의 네트워크 탭으로 페이지에서 발생하는 데이터 요청은 XHR 메뉴로 필터링할 수 있습니다.
+  - 검색 후 Headers
+    - API key등 정보 확인 가능
+  - Previe & Response
+    - 응답 결과
