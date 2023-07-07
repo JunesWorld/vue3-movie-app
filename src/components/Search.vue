@@ -75,7 +75,7 @@ export default {
     // store의 mutations를 실행할 때는 .commit() 메소드를,
     // actions를 실행할 때는 .dispatch() 메소드 사용
     // movie = index.js
-    async apply() {
+    apply() {
       this.$store.dispatch('movie/searchMovies', {
         title: this.title,
         type: this.type,
@@ -103,7 +103,7 @@ export default {
       width: 120px;
       margin-right: 10px;
       &:last-child {
-        margin-right: 0px;
+        margin-right: 0;
       }
     }
   }

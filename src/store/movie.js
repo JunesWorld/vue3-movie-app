@@ -1,4 +1,5 @@
 import axios from 'axios'
+import _uniqBy from 'lodash/uniqBy'
 
 export default {
   // module!
@@ -46,7 +47,8 @@ export default {
       // 객체데이터를 담아 payload에 전달
       // MovieList.vue에서 사용
       commit('updateState', {
-        movies: Search
+        // store/movies.js 에 할당
+        movies: _uniqBy(Search, 'imdbID')
       })
       console.log(totalResults) // 318 -> 32page
       console.log(typeof totalResults) // string
@@ -63,7 +65,10 @@ export default {
           const res = await axios.get(`https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`)
           const { Search } = res.data
           commit('updateState', {
-            movies: [...state.movies, ...Search]
+            movies: [
+              ...state.movies, 
+              ..._uniqBy(Search, 'imdbID')
+            ]
           })
         }
       }
