@@ -35,7 +35,7 @@ export default {
   // payload : searchMovies가 실행될 때 인수로 들어온 특정한 데이터를 받는 역할
   // Search.vue -> apply -> Network 전송
   actions: {
-    async searchMovies({ commit }, payload) {
+    async searchMovies({ state, commit }, payload) {
       const { title, type, number, year } = payload // eslint-disable-line no-unused-vars
       // Search Movies...
       const OMDB_API_KEY = '7035c60c'
@@ -48,6 +48,25 @@ export default {
       commit('updateState', {
         movies: Search
       })
+      console.log(totalResults) // 318 -> 32page
+      console.log(typeof totalResults) // string
+
+      const total = parseInt(totalResults, 10)
+      const pageLength = Math.ceil(total / 10) // 올림 처리(ceil) 후 정수
+
+      // 추가 요청!
+      if (pageLength > 1) {
+        for(let page = 2; page <= pageLength; page += 1) {
+          if (page > number / 10) {
+            break
+          }
+          const res = await axios.get(`https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`)
+          const { Search } = res.data
+          commit('updateState', {
+            movies: [...state.movies, ...Search]
+          })
+        }
+      }
     }
   }
 }

@@ -7,8 +7,8 @@ export default {
   props: {
     movie: {
       type: Object,
-      // default: () => ({})
-      default: function () { return {} }
+      // default: function () { return {} }
+      default: () => ({})
     }
   }
 }

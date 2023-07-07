@@ -43,6 +43,7 @@ export default {
     return {
       title: '',
       type: 'movie',
+      // page 요청 10, 20, 30
       number: 10,
       year: '',
       filters: [
@@ -51,6 +52,7 @@ export default {
           items: ['movie', 'series', 'episode']
         },
         {
+          // 최대 3 page만 나오도록!!
           name: 'number',
           items: [10, 20, 30]
         },
