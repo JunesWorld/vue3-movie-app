@@ -98,6 +98,8 @@ npm i vuex@next
 ```bash
 npm i lodash
 ```
+
+movie.js
 ```html
-_.uniqueBy
+import _uniqBy from 'lodash/uniqBy'
 ```
