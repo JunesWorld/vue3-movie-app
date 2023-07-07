@@ -90,3 +90,16 @@ npm i axios
 ```bash
 npm i vuex@next
 ```
+
+## Lodash Install
+
+배열 데이터 고유화
+
+```bash
+npm i lodash
+```
+
+movie.js
+```html
+import _uniqBy from 'lodash/uniqBy'
+```
