@@ -1,4 +1,7 @@
 <template>
+  <!-- 
+    movies = computed
+   -->
   <div class="container">
     <div class="inner">
       <MovieItem

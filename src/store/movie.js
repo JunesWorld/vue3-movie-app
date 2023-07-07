@@ -33,6 +33,7 @@ export default {
   // 데이터 변경은 mutations 그 외는 actions
   // context 사용해야함 : state, getters, mutation 활용
   // payload : searchMovies가 실행될 때 인수로 들어온 특정한 데이터를 받는 역할
+  // Search.vue -> apply -> Network 전송
   actions: {
     async searchMovies({ commit }, payload) {
       const { title, type, number, year } = payload // eslint-disable-line no-unused-vars
