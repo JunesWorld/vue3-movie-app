@@ -4,6 +4,9 @@
    -->
   <div class="container">
     <div class="inner">
+      <div class="message">
+        {{ message }}
+      </div>
       <MovieItem
         v-for="movie in movies"
         :key="movie.imdbID" 
@@ -22,6 +25,9 @@ export default {
   computed: {
     movies() {
       return this.$store.state.movie.movies
+    },
+    message() {
+      return this.$store.state.movie.message
     }
   }
 }
