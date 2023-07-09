@@ -3,8 +3,14 @@ module.exports = {
     // JS는 browser, node 환경에서 동작한다.
     // 코드 검사
     browser: true,
-    node: true
+    node: true,
+    jest: true,
+    "cypress/globals": true
   },
+
+  plugins: [
+    "cypress"
+  ],
   // 코드 검사를 할 기본적인 규칙
   extends: [
     // vue
@@ -16,14 +22,15 @@ module.exports = {
   ],
   // 코드 분석기
   parserOptions: {
-    parser: '@babel/eslint-parser'
+    // parser: '@babel/eslint-parser'
+    parser: 'babel-eslint'
   },
   // 규칙 추가 가능
   // extends에서 설정했기 때문에 설정 skip
   rules: {
     "vue/html-closing-bracket-newline": ["error", {
-      "singleline": "never",
-      "multiline": "never"
+      "singleline": 'never',
+      "multiline": 'never'
     }],
     // self-closing
     "vue/html-self-closing": ["error", {

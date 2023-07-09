@@ -30,7 +30,7 @@ export default {
 .movie {
   $width: 168px;
   width: $width;
-  height: $width * 3 / 2;
+  height: calc(#{$width} * 3 / 2);
   margin: 10px;
   border-radius: 4px;
   background-color: $gray-400;
@@ -38,7 +38,7 @@ export default {
   overflow: hidden;
   position: relative;
   .info {
-    background-color: rgba($balck, .3);
+    background-color: rgba($black, .3);
     width: 100%;
     padding: 14px;
     font-size: 14px;

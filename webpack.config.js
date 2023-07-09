@@ -1,16 +1,17 @@
-const _require = id => require(require.resolve(id, { paths: [require.main.path] }))
 // import
 // 절대경로 명시
-const path = _require('path')
+const path = require('path')
 
 // 개발 서버 오픈
 // plugins
-const HtmlPlugin = _require('html-webpack-plugin')
+const HtmlPlugin = require('html-webpack-plugin')
 
 // Favicon 설정
-const CopyPlugin = _require('copy-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
-const { VueLoaderPlugin } = _require('vue-loader')
+const Dotenv = require('dotenv-webpack')
+
+const { VueLoaderPlugin } = require('vue-loader')
 
 // export
 module.exports =  {
@@ -57,10 +58,15 @@ module.exports =  {
         use: [
           // 순서 중요!
           'vue-style-loader',
-          // 'style-loader',
+          'style-loader',
           'css-loader',
           'postcss-loader',
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: '@import "~/scss/main";'
+            }
+          }
         ]
       },
       {
@@ -88,7 +94,8 @@ module.exports =  {
         { from: 'static' }
       ]
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new Dotenv()
   ],
 
   devServer: {
