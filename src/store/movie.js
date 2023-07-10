@@ -8,7 +8,7 @@ export default {
   // data!
   state: () => ({
     movies: [],
-    message: '',
+    message: 'Search for the movie title!',
     loading: false
   }),
   // computed!
@@ -37,6 +37,15 @@ export default {
   // Search.vue -> apply -> Network 전송
   actions: {
     async searchMovies({ state, commit }, payload) {
+      // Search Movies 여러번 동작 방지
+      if (state.loading) {
+        return
+      }
+      // 검색 전 message 초기화 
+      commit('updateState', {
+        message: '',
+        loading: true
+      })
       try {
         // Search Movies...
       // await = 처리 결과 나올때까지
@@ -81,6 +90,10 @@ export default {
         commit('updateState', {
           movies: [],
           message
+        })
+      } finally {
+        commit('updateState', {
+          loading: false
         })
       }
     }
