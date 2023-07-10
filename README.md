@@ -139,3 +139,7 @@ import _uniqBy from 'lodash/uniqBy'
 ## 강제 지연 필요시
 
 작업관리자 / Network / No throttling
+
+## Skeleton UI
+
+UI의 뼈대
