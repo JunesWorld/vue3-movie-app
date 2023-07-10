@@ -2,6 +2,16 @@
 // 재정의 색상은 variables 코드 실행되기 전에 넣어줘야한다.
 $primary: #FDC000;
 
+// Bootstrap/Container/SCSS
+// |- container 가로 너비 지정
+$container-max-widths: (
+  sm: 540px,
+  md: 704px,
+  lg: 924px,
+  xl: 1140px,
+  xxl: 1364px
+);
+
 // Required
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
