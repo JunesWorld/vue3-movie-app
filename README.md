@@ -103,3 +103,36 @@ movie.js
 ```html
 import _uniqBy from 'lodash/uniqBy'
 ```
+
+## 말줄임 표시(div 3가지 요소) 
+
+`white-space: nowrap;` : 배경에 감싸지 않고 한줄로 표현
+
+`overflow: hidden;` : 넘치는 부분 숨기기
+
+`text-overflow: ellipsis;` : 넘치는 부분 말줄임 표시(...)
+
+- 블러 처리
+  ```css
+  div {
+    background-color: orange;
+    font-size: 30px;
+    padding: 20px;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+  }
+  div::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%
+    height: 100%
+    border: 4px solid red;
+    box-sizing: border-box;
+    backdrop-filter: blur(4px) grayscale();
+  }
+   
