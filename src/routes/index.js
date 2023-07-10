@@ -15,7 +15,9 @@ export default createRouter({
       component: Home
     },
     {
-      path: '/movie',
+      // 주소 동적 변경
+      // Movie.vue
+      path: '/movie/:id',
       component: Movie
     },
     {
