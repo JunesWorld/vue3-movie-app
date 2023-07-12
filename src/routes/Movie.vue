@@ -25,7 +25,7 @@
     v-else  
     class="movie-details">
       <div 
-        :style="{ backgroundImage: `url(${theMovie.Poster})` }"
+        :style="{ backgroundImage: `url(${requestDiffSizeImage(theMovie.Poster)})` }"
         class="poster"></div>
       <div class="specs">
         <div class="title">
@@ -97,6 +97,12 @@ export default {
       // movie/tt12312
       id: this.$route.params.id
     })
+  },
+  // Image Resizing
+  methods: {
+    requestDiffSizeImage(url, size = 700) {
+      return url.replace('SX300', `SX${size}`)
+    }
   }
 }
 </script>
