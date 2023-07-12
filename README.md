@@ -156,3 +156,7 @@ import _uniqBy from 'lodash/uniqBy'
 
 [Goggle] vue router next (Vue Router Home)
 - Dynamic Rout Matching / Catch all 404 Not found Route
+
+## 부트스트랩 Breakpoint(반응형)
+
+- Layout / Breakpoints
