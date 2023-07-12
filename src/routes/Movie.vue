@@ -109,7 +109,12 @@ export default {
   },
   // Image Resizing
   methods: {
+    // if 예외 처리 img 없을때
     requestDiffSizeImage(url, size = 700) {
+      if (!url || url === 'N/A') { // 해당사항이 없으면
+        this.imageLoading = false // 이미지 로딩을 종료하고
+        return '' // 빈 문자열 반환해서 background img 아무것도 출력 x
+      }
       // return url.replace('SX300', `SX${size}`)
       const src = url.replace('SX300', `SX${size}`)
       // 비동기 처리

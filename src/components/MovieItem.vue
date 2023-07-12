@@ -47,8 +47,16 @@ export default {
       // img.addEventListener('load', () => { // load가 되어서 실제 화면에 출력할 상태가 되면 imageLoading을 false로 변경
       //   this.imageLoading = false
       // })
-      await this.$loadImage(this.movie.Poster)
-      this.imageLoading = false
+
+      const poster = this.movie.Poster
+      // 예외처리
+      // 이미지 값이 없어 N/A 이면 종료 if
+      if (!poster || poster === 'N/A') {
+        this.imageLoading = false
+      } else {
+        await this.$loadImage(poster) // image 로드가 끝나면
+        this.imageLoading = false // 로딩 종료
+      }
     }
   }
 }
