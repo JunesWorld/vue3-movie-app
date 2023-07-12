@@ -143,3 +143,9 @@ import _uniqBy from 'lodash/uniqBy'
 ## Skeleton UI
 
 UI의 뼈대
+
+## 더 높은 해상도의 영화 포스터 가져오기
+
+[Google] 실시간 이미지 리사이징
+- AWS Lambda@edge로 실시간 이미지 리사이징
+- 이미지 URL에서 리사이징
