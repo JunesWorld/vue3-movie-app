@@ -151,3 +151,8 @@ import _uniqBy from 'lodash/uniqBy'
 - 이미지 URL에서 리사이징
 
 ## Plugin = $
+
+## 404 Page Not Found
+
+[Goggle] vue router next (Vue Router Home)
+- Dynamic Rout Matching / Catch all 404 Not found Route
