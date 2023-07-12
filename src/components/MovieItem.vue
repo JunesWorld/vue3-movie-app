@@ -2,6 +2,10 @@
   <div 
     :style="{ backgroundImage: `url(${movie.Poster})` }"
     class="movie">
+    <Loader 
+    v-if="imageLoading" 
+    :size="1.5"
+    absolute />
     <div class="info">
       <div class="year">
         {{ movie.Year }}
@@ -14,12 +18,37 @@
 </template>
 
 <script>
+import Loader from '~/components/Loader'
+
 export default {
+  components: {
+    Loader
+  },
   props: {
     movie: {
       type: Object,
       // default: function () { return {} }
       default: () => ({})
+    }
+  },
+  data() {
+    return {
+      imageLoading: true // Image가 로딩되고 있습니다
+    }
+  },
+  // methods에 html 연결해서 다루기 때문에 mounted
+  mounted() {
+    this.init()
+  }, 
+  methods: {
+    async init() {
+      // const img = document.createElement('img') // img 메모리 생성
+      // img.src = this.movie.Poster // poster img 주소 삽입
+      // img.addEventListener('load', () => { // load가 되어서 실제 화면에 출력할 상태가 되면 imageLoading을 false로 변경
+      //   this.imageLoading = false
+      // })
+      await this.$loadImage(this.movie.Poster)
+      this.imageLoading = false
     }
   }
 }

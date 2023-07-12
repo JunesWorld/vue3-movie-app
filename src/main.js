@@ -9,6 +9,7 @@ import store from './store' // same as './store/index.js'
 // Router
 // 특정 폴더에 있는 index 파일은 생략 가능
 import router from './routes'
+import loadImage from './plugins/loadImage'
 
 
 // HTML에서 app이라는 값을 가지고 있는 해당 요소에 vue 프로젝트 연결
@@ -17,7 +18,9 @@ import router from './routes'
 
 // 2. CLI
 // plugin으로 연결 & Library 지정
+// 반복사용하는 plugins
 createApp(App)
-  .use(store)
-  .use(router) 
+  .use(store) // $store
+  .use(router) // $route, $router
+  .use(loadImage)
   .mount('#app')
