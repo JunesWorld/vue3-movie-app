@@ -40,14 +40,13 @@ export default {
     async searchMovies({ state, commit }, payload) {
       // Search Movies 여러번 동작 방지
       // Loading True Check!
-      if (state.loading) {
-        return
-      }
+      if (state.loading) return
       // 검색 전 message 초기화 
       commit('updateState', {
         message: '',
         loading: true
       })
+
       try {
         // Search Movies...
       // await = 처리 결과 나올때까지
@@ -63,11 +62,12 @@ export default {
         // store/movies.js 에 할당
         movies: _uniqBy(Search, 'imdbID')
       })
-      console.log(totalResults) // 318 -> 32page
-      console.log(typeof totalResults) // string
+
+      // console.log(totalResults) // 318 -> 32page
+      // console.log(typeof totalResults) // string
 
       const total = parseInt(totalResults, 10)
-      const pageLength = Math.ceil(total / 10) // 올림 처리(ceil) 후 정수
+      const pageLength = Math.ceil(total / 10) // 올림 처리(ceil) 후 정수 / 총 페이지 길이
 
       // 추가 요청!
       if (pageLength > 1) {
@@ -99,18 +99,18 @@ export default {
         })
       }
     },
-    async searchMoviesWithId({ state, commit }, payload) {
+    async searchMovieWithId({ state, commit }, payload) {
       if (state.loading) return // True
       // False
       commit('updateState', {
         theMovie: {}, // 초기화 후 로딩 -> 검색 되었던 영화 정보 화면 출력 x
-        loading: true
+        loading: true,
       })
 
       try {
         const res = await _fetchMovie(payload)
         // console.log(res.data) // 영화 정보(Ratings) 어떻게 출력되는지 확인
-        commit('upadateState', {
+        commit('updateState', {
           theMovie: res.data // 위쪽에 상태정의 필요
         })
       } catch (error) {
@@ -118,7 +118,7 @@ export default {
           theMovie: {}
         })
       } finally {
-        commit('upadateState', {
+        commit('updateState', {
           loading: false
         })
       }

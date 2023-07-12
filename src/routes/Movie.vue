@@ -17,13 +17,13 @@
       </div>
     </div>
     <Loader
-    :size="3"
-    :zIndex="9"
-    fixed />
+      :size="3"
+      :zIndex="9"
+      fixed />
     </template>
     <div 
-    v-else  
-    class="movie-details">
+      v-else  
+      class="movie-details">
       <div 
         :style="{ backgroundImage: `url(${requestDiffSizeImage(theMovie.Poster)})` }"
         class="poster">
