@@ -20,6 +20,7 @@
         <RouterLink
           :to="nav.href"
           active-class="active"
+          :class="{ active: isMatch(nav.path) }"
           class="nav-link">
           {{ nav.name }}
         </RouterLink>
@@ -44,13 +45,21 @@ export default {
         },
         {
           name: 'Movie',
-          href: '/movie'
+          href: '/movie/tt4520998',
+          path: /^\/movie/ // '/movie'
         },
         {
           name: 'About',
           href: '/about'
         }
       ]
+    }
+  },
+  // Path 일치 Nav 활성화
+  methods: {
+    isMatch(path) {
+      if(!path) return false
+      return path.test(this.$route.fullPath)
     }
   }
 }
