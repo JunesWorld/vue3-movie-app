@@ -149,3 +149,5 @@ import _uniqBy from 'lodash/uniqBy'
 [Google] 실시간 이미지 리사이징
 - AWS Lambda@edge로 실시간 이미지 리사이징
 - 이미지 URL에서 리사이징
+
+## Plugin = $
