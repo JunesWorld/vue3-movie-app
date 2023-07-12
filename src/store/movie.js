@@ -109,6 +109,7 @@ export default {
 
       try {
         const res = await _fetchMovie(payload)
+        // console.log(res.data) // 영화 정보(Ratings) 어떻게 출력되는지 확인
         commit('upadateState', {
           theMovie: res.data // 위쪽에 상태정의 필요
         })
