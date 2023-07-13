@@ -14,6 +14,10 @@ export default {
     Headline,
     Search,
     MovieList
+  },
+  // Home Click -> 초기화
+  created() {
+    this.$store.commit('movie/resetMovies')
   }
 }
 </script>
