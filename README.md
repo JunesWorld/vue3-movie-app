@@ -176,3 +176,8 @@ import _uniqBy from 'lodash/uniqBy'
           }
     ```
 - 모든 파일에서 `@import "~/scss/main";` 제거(돋보기)
+
+## Vues Helpers
+
+[Google] vuex next
+- Core Concepts / State / mapstate Helper
