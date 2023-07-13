@@ -181,3 +181,20 @@ import _uniqBy from 'lodash/uniqBy'
 
 [Google] vuex next
 - Core Concepts / State / mapstate Helper
+- Header.vue
+  ```js
+  import { mapState } from 'vuex'
+  
+  computed: {
+    ...mapState('about', [
+      'image',
+      'name'
+    ])
+    // image() {
+    //   return this.$store.state.about.image
+    // },
+    // name() {
+    //   return this.$store.state.about.name
+    // }
+  },
+  ```
