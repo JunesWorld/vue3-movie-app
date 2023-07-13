@@ -160,3 +160,19 @@ import _uniqBy from 'lodash/uniqBy'
 ## 부트스트랩 Breakpoint(반응형)
 
 - Layout / Breakpoints
+
+## 모든 컴포넌트에서 전역 스타일 가져오기
+
+[Google] sass-loader github
+- webpack-contrib/sass-loader: Compiles Sass to CSS -Github
+- additionalData
+  - webpack.config.js
+    ```js
+    {
+            loader: 'sass-loader',
+            options: {
+              additionalData: '@import "~/scss/main";'
+            }
+          }
+    ```
+- 모든 파일에서 `@import "~/scss/main";` 제거(돋보기)
