@@ -179,6 +179,7 @@ import _uniqBy from 'lodash/uniqBy'
 
 ## Vues Helpers
 
+State에서 자주 활용 (Actions, Mutations에서는 비추)
 [Google] vuex next
 - Core Concepts / State / mapstate Helper
 - Header.vue
