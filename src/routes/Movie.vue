@@ -80,6 +80,7 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 import Loader from '~/components/Loader'
 
 export default {
@@ -88,17 +89,21 @@ export default {
   },
   // 영화 상세 정보
   computed: {
-    theMovie() {
-      return this.$store.state.movie.theMovie
-    },
-    data() {
-      return {
-        imageLoading: true
-      }
-    },
-    loading() {
-      return this.$store.state.movie.loading
-    }
+    ...mapState('movie', [
+      'theMovie',
+      'loading'
+    ])
+    // theMovie() {
+    //   return this.$store.state.movie.theMovie
+    // },
+    // data() {
+    //   return {
+    //     imageLoading: true
+    //   }
+    // },
+    // loading() {
+    //   return this.$store.state.movie.loading
+    // }
   },
   // movie.js => _fetchMovie -> theMovie
   created() {
