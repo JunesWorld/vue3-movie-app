@@ -204,3 +204,15 @@ State에서 자주 활용 (Actions, Mutations에서는 비추)
 
 [Google] Vue Router
 - Advanced / Scroll Behavior
+
+## Vue Router 정리
+
+- <RouterView> : 페이지가 출력(렌더링)되는 영역 컴포넌트
+  - App.vue, Header, Footer
+- <RouterLink> : 페이지 이동을 위한 링크 컴포넌트
+  - A tag
+- $route(속성) : Route(페이지) 정보를 가지는 객체
+  - fullPath : 해당 페이지의 전체경로
+  - params : 해당 페이지의 파라미터정보
+- $router(메소드) : Route(페이지) 조작을 위한 객체
+  - push : 페이지 이동
