@@ -186,7 +186,7 @@ import _uniqBy from 'lodash/uniqBy'
   import { mapState } from 'vuex'
   
   computed: {
-    ...mapState('about', [
+    ...mapState('about'(모듈), [
       'image',
       'name'
     ])
