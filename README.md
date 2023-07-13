@@ -224,3 +224,14 @@ State에서 자주 활용 (Actions, Mutations에서는 비추)
 `vue-movie-app`  
 `Team/master/npm run build/dist`  
 `Deploy Site`  
+
+## Netify Serverless Functions
+
+보안 이슈 : Network 모두 노출
+- Functions
+- `netify.toml`
+- functions 파일 생성
+- 파일 작성 후 Github push
+- Netify deploy 완료 후 site overview에서 주소로 이동
+  - #/ 삭제
+  - netify/functions/hello 접근
