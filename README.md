@@ -216,3 +216,11 @@ State에서 자주 활용 (Actions, Mutations에서는 비추)
   - params : 해당 페이지의 파라미터정보
 - $router(메소드) : Route(페이지) 조작을 위한 객체
   - push : 페이지 이동
+
+## Netify 배포
+
+`New site from Git`  
+`Continous Deployment/Github`  
+`vue-movie-app`  
+`Team/master/npm run build/dist`  
+`Deploy Site`  
