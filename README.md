@@ -199,3 +199,8 @@ State에서 자주 활용 (Actions, Mutations에서는 비추)
     // }
   },
   ```
+
+## 검색 정보 초기화 및 페이지 전환 스크롤 위치 복구
+
+[Google] Vue Router
+- Advanced / Scroll Behavior
