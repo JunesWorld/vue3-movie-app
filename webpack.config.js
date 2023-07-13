@@ -60,7 +60,13 @@ module.exports =  {
           // 'style-loader',
           'css-loader',
           'postcss-loader',
-          'sass-loader'
+          // 모든 컴포넌트에서 전역 스타일 가져오기
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: '@import "~/scss/main";'
+            }
+          }
         ]
       },
       {

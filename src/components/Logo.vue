@@ -8,7 +8,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
 .logo {
   // font이름은 Dash때문에 ""로 묶어서 사용
   font-family: "Oswald", sans-serif;

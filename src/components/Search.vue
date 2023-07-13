@@ -88,7 +88,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
 .container {
   display: flex;
   > * { // 전체 선택자

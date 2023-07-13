@@ -84,7 +84,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/scss/main";
 // Header 수평정렬
 header {
   height: 70px;

@@ -13,7 +13,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import "~/scss/main"; // span
 
 .container {
   padding-top: 40px;
