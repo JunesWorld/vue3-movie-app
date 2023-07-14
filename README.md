@@ -217,7 +217,7 @@ State에서 자주 활용 (Actions, Mutations에서는 비추)
 - $router(메소드) : Route(페이지) 조작을 위한 객체
   - push : 페이지 이동
 
-## Netify 배포
+## Netlify 배포
 
 `New site from Git`  
 `Continous Deployment/Github`  
@@ -225,13 +225,22 @@ State에서 자주 활용 (Actions, Mutations에서는 비추)
 `Team/master/npm run build/dist`  
 `Deploy Site`  
 
-## Netify Serverless Functions
+## Netlify Serverless Functions
 
 보안 이슈 : Network 모두 노출
 - Functions
 - `netify.toml`
 - functions 파일 생성
 - 파일 작성 후 Github push
-- Netify deploy 완료 후 site overview에서 주소로 이동
+- Netlify deploy 완료 후 site overview에서 주소로 이동
   - #/ 삭제
-  - netify/functions/hello 접근
+  - netlify/functions/hello 접근
+
+## Netlify - CLI 구성
+
+Netlify Docs
+- CLI / Command reference / Netlify Dev
+
+CLI Install & 실행
+- `npm i -D netlify-cli`
+- `npm run dev:netlify` -> localhost:8888 
