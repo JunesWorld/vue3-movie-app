@@ -117,9 +117,13 @@ export default {
         commit('updateState', {
           theMovie: res.data // 위쪽에 상태정의 필요
         })
-      } catch (error) {
+      // Serverless
+      // Network 동작해서 데이터를 가져오는 것이기 때문에
+      // Error 객체
+      } catch ({ message }) {
         commit('updateState', {
-          theMovie: {}
+          movies: [],
+          message
         })
       } finally {
         commit('updateState', {
@@ -130,24 +134,28 @@ export default {
   }
 }
 
-function _fetchMovie(payload) {
-  const { title, type, year, page, id } = payload
-  const OMDB_API_KEY = '7035c60c'
-  // payload에 id값이 있으면 새로운 url 주소 요청 | 아니면 기존의 url
-  const url = id 
-    ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}` 
-    : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`
+async function _fetchMovie(payload) {
+  // serverless(functions/movie.js)
+  // payload = data(title, 영화정보 ...)
+  // get = querystirng | post = body에 담는다
+  return await axios.post('/.netlify/functions/movie', payload)
+  // const { title, type, year, page, id } = payload
+  // const OMDB_API_KEY = '7035c60c'
+  // // payload에 id값이 있으면 새로운 url 주소 요청 | 아니면 기존의 url
+  // const url = id 
+  //   ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}` 
+  //   : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`
   
-  return new Promise((resolve, reject) => {
-    axios.get(url)
-      .then(res => {
-        if (res.data.Error) {
-          reject(res.data.Error)
-        }
-        resolve(res)
-      })
-      .catch(err => {
-        reject(err.message)
-      })
-  })
+  // return new Promise((resolve, reject) => {
+  //   axios.get(url)
+  //     .then(res => {
+  //       if (res.data.Error) {
+  //         reject(res.data.Error)
+  //       }
+  //       resolve(res)
+  //     })
+  //     .catch(err => {
+  //       reject(err.message)
+  //     })
+  // })
 }
