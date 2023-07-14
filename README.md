@@ -259,3 +259,33 @@ CLI Install & 실행
 - Netlify에서 환경변수 관리
   - Site settings / Environment / Environment variables
   - OMDB_API_KEY
+
+## 포트 수정 및 배포
+
+package.json
+```js
+"scripts": {
+    "dev:webpack": "webpack-dev-server --mode development",
+    "dev": "netlify dev",
+    "build": "webpack --mode production",
+    "lint": "eslint --fix --ext .js,.vue"
+  },
+```
+- `npm run dev` = serverless
+- `npm run dev:webpack`
+- netlify.toml 파일 command 수정
+
+## 단위 테스트
+
+Unit Test(테스트 코드)
+- 단위(Unit) 테스트란 데이터(상태), 함수(메소드), 컴포넌트 등의 정의된 프로그램 최소 단위들이 독립적으로 정상 동작하는지 확인하는 방법
+- Framework : Jest, Vue Test Utils
+
+E2E Test(화면에서 테스트)
+- E2E(End to End) 테스트란 애플리케이션의 처음부터 끝까지의 실제 사용자의 관점에서 사용 흐름을 테스트하는 방법
+- Framework : Cypress
+
+## 테스트 환경 구성
+
+`npm i -D jest @vue/test-utils@next vue-jest@next babel-jest`
+- jest.config.js 파일 생성
