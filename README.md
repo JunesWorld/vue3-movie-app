@@ -250,6 +250,7 @@ CLI Install & 실행
 코드에 API Key 노출 방지  
 `npm i -D dotenv-webpack`
 
+- .env 파일 생성 후 API key 입력
 - webpack.config.js
   - `const Dotenv = require('dotenv-webpack')`
 - movie.js
