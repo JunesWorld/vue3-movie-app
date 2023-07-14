@@ -255,3 +255,7 @@ CLI Install & 실행
   - `const Dotenv = require('dotenv-webpack')`
 - movie.js
   - `const OMDB_API_KEY = process.env.OMDB_API_KEY`
+
+- Netlify에서 환경변수 관리
+  - Site settings / Environment / Environment variables
+  - OMDB_API_KEY
