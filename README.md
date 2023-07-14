@@ -249,3 +249,6 @@ CLI Install & 실행
 
 코드에 API Key 노출 방지  
 `npm i -D dotenv-webpack`
+
+- webpack.config.js
+  - `const Dotenv = require('dotenv-webpack')`
