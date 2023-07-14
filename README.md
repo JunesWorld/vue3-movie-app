@@ -252,3 +252,5 @@ CLI Install & 실행
 
 - webpack.config.js
   - `const Dotenv = require('dotenv-webpack')`
+- movie.js
+  - `const OMDB_API_KEY = process.env.OMDB_API_KEY`
