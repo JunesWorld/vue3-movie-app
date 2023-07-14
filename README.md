@@ -244,3 +244,18 @@ Netlify Docs
 CLI Install & 실행
 - `npm i -D netlify-cli`
 - `npm run dev:netlify` -> localhost:8888 
+
+## 로컬 및 서버의 환경 변수 구성
+
+코드에 API Key 노출 방지  
+`npm i -D dotenv-webpack`
+
+- .env 파일 생성 후 API key 입력
+- webpack.config.js
+  - `const Dotenv = require('dotenv-webpack')`
+- movie.js
+  - `const OMDB_API_KEY = process.env.OMDB_API_KEY`
+
+- Netlify에서 환경변수 관리
+  - Site settings / Environment / Environment variables
+  - OMDB_API_KEY
