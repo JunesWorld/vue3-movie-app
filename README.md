@@ -244,3 +244,8 @@ Netlify Docs
 CLI Install & 실행
 - `npm i -D netlify-cli`
 - `npm run dev:netlify` -> localhost:8888 
+
+## 로컬 및 서버의 환경 변수 구성
+
+코드에 API Key 노출 방지  
+`npm i -D dotenv-webpack`
