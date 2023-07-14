@@ -1,11 +1,11 @@
 const axios = require('axios')
+const { OMDB_API_KEY } = process.env
 
 exports.handler = async function (event) {
   console.log(event)
   // JSON.parse = 객체 데이터로 변환
   const payload = JSON.parse(event.body)
   const { title, type, year, page, id } = payload
-  const OMDB_API_KEY = '7035c60c'
   // payload에 id값이 있으면 새로운 url 주소 요청 | 아니면 기존의 url
   const url = id 
     ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}` 
