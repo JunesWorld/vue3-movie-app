@@ -289,3 +289,11 @@ E2E Test(화면에서 테스트)
 
 `npm i -D jest @vue/test-utils@next vue-jest@next babel-jest`
 - jest.config.js 파일 생성
+- tests 폴더
+  - example.js / export
+  - example.test.js / import
+- package.json
+  - scripts
+    - "test:unit": "jest --watchAll"
+    - jest를 통해서 테스트 환경을 실행하고 변경사항들을 watchAll로 감지해서 동작
+    - `npm run test:unit`
