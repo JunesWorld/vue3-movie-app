@@ -1,35 +1,21 @@
-import { double } from './example'
+const userA = {
+  name: 'JUNE',
+  age: 85
+}
+const userB = {
+  name: 'NEO',
+  age: 22
+}
 
-describe('그룹 1', () => {
-  // 그룹안의 모든 테스트가 시작되기 전에 단 한번만 실행
-  beforeAll(() => {
-    console.log('beforeAll!')
+test('데이터가 일치해야 합니다', () => {
+  expect(userA.age).toBe(85)
+  expect(userA).toEqual({
+    name: 'JUNE',
+    age: 85
   })
-  // 모든 테스트가 실행된 후 단 한번만 실행
-  afterAll(() => {
-    console.log('afterAll!')
-  })
-  // 각각의 테스트가 실행되기 직전에 동작
-  beforeEach(() => {
-    console.log('beforeEach!')
-  })
-  // 각각의 테스트가 동작한 이후에 동작
-  afterEach(() => {
-    console.log('afterEach!')
-  })
+})
 
-  test('첫 테스트', () => {
-    console.log('첫 테스트!')
-    expect(123).toBe(123)
-  })
-  
-  test('인수가 숫자 데이터입니다', () => {
-    console.log('인수가 숫자 데이터입니다!')
-    expect(double(3)).toBe(6)
-  })
-  
-  test('인수가 없습니다', () => {
-    console.log('인수가 없습니다!')
-    expect(double()).toBe(0)
-  })
+test('데이터가 일치하지 않아야 합니다', () => {
+  expect(userB.name).not.toBe('JUNE')
+  expect(userB).not.toBe(userA)
 })
