@@ -308,3 +308,5 @@ E2E Test(화면에서 테스트)
   - beforeEach(fn, timeout)
   - describe(name, fn)
   - test(name, fn, timeout)
+  - toBe() : 원시형 데이터 비교
+  - toEqual() : 객체(참조형) 데이터 비교
