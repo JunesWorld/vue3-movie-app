@@ -289,3 +289,6 @@ E2E Test(화면에서 테스트)
 
 `npm i -D jest @vue/test-utils@next vue-jest@next babel-jest`
 - jest.config.js 파일 생성
+- tests 폴더
+  - example.js / export
+  - example.test.js / import
