@@ -297,3 +297,14 @@ E2E Test(화면에서 테스트)
     - "test:unit": "jest --watchAll"
     - jest를 통해서 테스트 환경을 실행하고 변경사항들을 watchAll로 감지해서 동작
     - `npm run test:unit`
+
+## Jest Globals
+
+[Google] Jest Testing
+- API/Globals
+  - afterAll(fn, timeout)
+  - afterEach(fn, timeout)
+  - beforeAll(fn, timeout)
+  - beforeEach(fn, timeout)
+  - describe(name, fn)
+  - test(name, fn, timeout)
