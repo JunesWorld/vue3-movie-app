@@ -292,3 +292,8 @@ E2E Test(화면에서 테스트)
 - tests 폴더
   - example.js / export
   - example.test.js / import
+- package.json
+  - scripts
+    - "test:unit": "jest --watchAll"
+    - jest를 통해서 테스트 환경을 실행하고 변경사항들을 watchAll로 감지해서 동작
+    - `npm run test:unit`
