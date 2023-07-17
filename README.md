@@ -301,7 +301,7 @@ E2E Test(화면에서 테스트)
 ## Jest Globals
 
 [Google] Jest Testing
-- API/Globals
+- API/Globals/example.test.js
   ```js
   import { double } from './example'
 
@@ -339,5 +339,88 @@ E2E Test(화면에서 테스트)
     })
   })
   ```
+example.js
+  ```js
+  export function double(num) {
+  if(!num) {
+    return 0
+  }
+  return num * 2
+}
+```
   - toBe() : 원시형 데이터 비교
   - toEqual() : 객체(참조형) 데이터 비교
+
+## Jest Matchers
+
+```js
+const userA = {
+  name: 'JUNE',
+  age: 85
+}
+const userB = {
+  name: 'NEO',
+  age: 22
+}
+
+test('데이터가 일치해야 합니다', () => {
+  expect(userA.age).toBe(85)
+  expect(userA).toEqual({
+    name: 'JUNE',
+    age: 85
+  })
+})
+
+test('데이터가 일치하지 않아야 합니다', () => {
+  expect(userB.name).not.toBe('JUNE')
+  expect(userB).not.toBe(userA)
+})
+```
+
+## 비동기 테스트
+
+example.testt.js
+```js
+import { asyncFn } from './example'
+
+// 2초 뒤에 비동기 코드 동작
+// 테스트 코드 동작
+// done() 동작
+describe('비동기 테스트', () => {
+  test('done', (done) => {
+    asyncFn().then(res => {
+      expect(res).toBe('Done!')
+      done()
+    })
+  })
+
+  // return으로 반환하면 비동기로 반환
+  test('then', () => {
+    return asyncFn().then(res => {
+      expect(res).toBe('Done!')
+    })
+  })
+
+  test('resolves', () => {
+    return expect(asyncFn()).resolve.toBe('Done!')
+  })
+
+  // 직관적!!(추천)
+  // 최대 5초까지만 기다릴 수 있음으로 넘어갈 시 명시
+  test('async/await', async () => {
+    const res = await asyncFn()
+    expect(res).toBe('Done!')
+  }, 7000)
+})
+```
+
+example.js
+```js
+export function asyncFn() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('Done!')
+    }, 2000);
+  })
+}
+```
