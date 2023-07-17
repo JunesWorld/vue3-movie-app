@@ -341,3 +341,29 @@ E2E Test(화면에서 테스트)
   ```
   - toBe() : 원시형 데이터 비교
   - toEqual() : 객체(참조형) 데이터 비교
+
+## Jest Matchers
+
+```js
+const userA = {
+  name: 'JUNE',
+  age: 85
+}
+const userB = {
+  name: 'NEO',
+  age: 22
+}
+
+test('데이터가 일치해야 합니다', () => {
+  expect(userA.age).toBe(85)
+  expect(userA).toEqual({
+    name: 'JUNE',
+    age: 85
+  })
+})
+
+test('데이터가 일치하지 않아야 합니다', () => {
+  expect(userB.name).not.toBe('JUNE')
+  expect(userB).not.toBe(userA)
+})
+```
