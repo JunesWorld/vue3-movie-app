@@ -1,21 +1,12 @@
-const userA = {
-  name: 'JUNE',
-  age: 85
-}
-const userB = {
-  name: 'NEO',
-  age: 22
-}
+import { asyncFn } from './example'
 
-test('데이터가 일치해야 합니다', () => {
-  expect(userA.age).toBe(85)
-  expect(userA).toEqual({
-    name: 'JUNE',
-    age: 85
-  })
-})
-
-test('데이터가 일치하지 않아야 합니다', () => {
-  expect(userB.name).not.toBe('JUNE')
-  expect(userB).not.toBe(userA)
+// 2초 뒤에 비동기 코드 동작
+// 테스트 코드 동작
+// done() 동작
+describe('비동기 테스트', () => {
+  // 직관적!!(추천)
+  test('async/await', async () => {
+    const res = await asyncFn()
+    expect(res).toBe('Done!')
+  }, 7000)
 })
