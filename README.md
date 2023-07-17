@@ -301,7 +301,7 @@ E2E Test(화면에서 테스트)
 ## Jest Globals
 
 [Google] Jest Testing
-- API/Globals
+- API/Globals/example.test.js
   ```js
   import { double } from './example'
 
@@ -339,6 +339,15 @@ E2E Test(화면에서 테스트)
     })
   })
   ```
+example.js
+  ```
+  export function double(num) {
+  if(!num) {
+    return 0
+  }
+  return num * 2
+}
+```
   - toBe() : 원시형 데이터 비교
   - toEqual() : 객체(참조형) 데이터 비교
 
