@@ -340,7 +340,7 @@ E2E Test(화면에서 테스트)
   })
   ```
 example.js
-  ```
+  ```js
   export function double(num) {
   if(!num) {
     return 0
