@@ -406,10 +406,11 @@ describe('비동기 테스트', () => {
   })
 
   // 직관적!!(추천)
+  // 최대 5초까지만 기다릴 수 있음으로 넘어갈 시 명시
   test('async/await', async () => {
     const res = await asyncFn()
     expect(res).toBe('Done!')
-  })
+  }, 7000)
 })
 ```
 
