@@ -424,3 +424,83 @@ export function asyncFn() {
   })
 }
 ```
+
+## 모의(Mock) 함수
+
+example.test.js
+```js
+import axios from 'axios'
+import { fetchMovieTitle } from './example'
+
+describe('비동기 테스트', () => {
+  test('영화 제목 변환', async () => {
+    // 모의함수
+    // test의 외부요인 제거
+    axios.get = jest.fn(() => {
+      return new Promise(resolve => {
+        resolve({
+          data: {
+            Title: 'Frozen II'
+          }
+        })
+      })
+    })
+    const title = await fetchMovieTitle()
+    expect(title).toBe('Frozen ii')
+  })
+})
+```
+
+example.js
+```js
+import axios from 'axios'
+import _upperFirst from 'lodash/upperFirst'
+import _toLower from 'lodash/toLower'
+
+export async function fetchMovieTitle() {
+  const res = await axios.get('https://omdbapi.com?apikey=7035c60c&i=tt4520988')
+  return _upperFirst(_toLower(res.data.Title)) // Frozen II => Frozen ii
+}
+```
+
+## VTU 첫 테스트
+
+[Google] vue test utils next
+
+Example.vue
+```js
+<template>
+  <div>{{ msg }}</div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      msg: 'Hello Vue test utils!'
+    }
+  },
+  mounted() {
+    console.log(this.msg)
+  }
+}
+</script>
+```
+
+example.test.js
+```js
+import { mount } from '@vue/test-utils'
+import Example from './Example.vue'
+
+test('메시지를 변경합니다', async() => {
+  const wrapper = mount(Example)
+  // wrapper.vm === this
+  expect(wrapper.vm.msg).toBe('Hello Vue test utils!')
+  // wrapper.vm.msg = 'Hello Junesworld!'
+  await wrapper.setData({
+    msg: 'Hello Junesworld!'
+  })
+  expect(wrapper.vm.msg).toBe('Hello Junesworld!')
+  expect(wrapper.find('div').text()).toBe('Hello Junesworld!')
+})
+```
