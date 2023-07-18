@@ -462,3 +462,7 @@ export async function fetchMovieTitle() {
   return _upperFirst(_toLower(res.data.Title)) // Frozen II => Frozen ii
 }
 ```
+
+## VTU 첫 테스트
+
+[Google] vue test utils next
