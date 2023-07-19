@@ -277,6 +277,9 @@ package.json
 
 ## 단위 테스트
 
+import Error
+- `npm install got@11.8.2` got 라이브러리 버전 다운그레이드 후 ES5 버전의 got 적용
+
 Unit Test(테스트 코드)
 - 단위(Unit) 테스트란 데이터(상태), 함수(메소드), 컴포넌트 등의 정의된 프로그램 최소 단위들이 독립적으로 정상 동작하는지 확인하는 방법
 - Framework : Jest, Vue Test Utils
