@@ -8,6 +8,7 @@ export default {
   // index.js에 연결해서 별개의 개념으로 활용 가능
   namespaced: true, 
   // data!
+  // 함수로 만들어서 반환!
   state: () => ({
     movies: [],
     message: _defaultMessage,
