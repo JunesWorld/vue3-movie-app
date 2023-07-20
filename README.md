@@ -507,3 +507,7 @@ test('메시지를 변경합니다', async() => {
   expect(wrapper.find('div').text()).toBe('Hello Junesworld!')
 })
 ```
+
+## E2E Test
+
+`npm i -D cypress eslint-plugin-cypress`
