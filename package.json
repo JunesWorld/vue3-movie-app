@@ -9,7 +9,8 @@
     "build": "webpack --mode production",
     "lint": "eslint --fix --ext .js,.vue",
     "test:unit": "jest --watchAll",
-    "test:unit:silent": "jest --watchAll --silent"
+    "test:unit:silent": "jest --watchAll --silent",
+    "test:e2e": "cypress open"
   },
   "keywords": [],
   "author": "",
@@ -27,8 +28,10 @@
     "babel-loader": "^9.1.2",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
+    "cypress": "^12.17.1",
     "dotenv-webpack": "^8.0.1",
     "eslint": "^8.42.0",
+    "eslint-plugin-cypress": "^2.13.3",
     "eslint-plugin-vue": "^9.14.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
