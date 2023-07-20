@@ -90,8 +90,8 @@ export default {
   // 영화 상세 정보
   computed: {
     ...mapState('movie', [
-      'theMovie',
-      'loading'
+      'loading',
+      'theMovie'
     ])
     // theMovie() {
     //   return this.$store.state.movie.theMovie
